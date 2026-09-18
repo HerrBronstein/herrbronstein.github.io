@@ -9,14 +9,14 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
+title                    : "Benjamin Bronstein"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+name                     : &name "Benjamin Bronstein"
+description              : &description "Applied mathematics student"   # Update this with a general description of your site, this is the default if not overridden by a page
+url                      : https://herrbronstein.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "HerrBronstein/herrbronstein.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -24,13 +24,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Bronstein Benjamin"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "I am a mathematics student at the University of Montpellier, specializing in applied mathematics, with a particular focus on the analysis of partial differential equations (PDEs), numerical analysis and mathematical modelling. I aim to develop a broad and rigorous understanding, from the mathematical formulation of a model and its theoretical analysis to its numerical solution using various methods, including the theoretical analysis of these methods and their computational implementation."
+  location         : "Montpellier"
+  employer         : "Faculty of sciences, Montpellier"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "benjamin.bronstein@etu.umontpellier.fr" 
 
   # Academic websites
   academia         : # URL
