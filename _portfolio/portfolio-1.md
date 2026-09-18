@@ -1,6 +1,6 @@
 ---
 title: "Supervised research project : Benjamin-Bona-Mahony (BBM) equation"
-excerpt: "A general study (from mathematical modelling to numerical analysis)"
+excerpt: "A general study (from mathematical modelling, including theoretical study, to numerical analysis and computation) of BBM equation "
 collection: portfolio
 ---
 
