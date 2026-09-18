@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Supervised research project : Benjamin-Bona-Mahony (BBM) equation"
+excerpt: "A general study (from mathematical modelling to numerical analysis)"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+Supervised by [Fabien Marche](https://imag.umontpellier.fr/~marche/), in pair with Adrien Martinelli.
