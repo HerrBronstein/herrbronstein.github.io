@@ -31,6 +31,7 @@ author:
   employer         : "Faculty of sciences, Montpellier"
   uri              : # URL
   email            : "benjamin.bronstein@etu.umontpellier.fr" 
+  linkedin         : "https://www.linkedin.com/in/benjamin-bronstein-74a6963a6/"
 
   # Academic websites
   academia         : # URL
@@ -66,7 +67,6 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
