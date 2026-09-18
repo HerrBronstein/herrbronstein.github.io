@@ -13,7 +13,7 @@ Education
 ======
 * M.Sc. in Applied Mathematics, Montpellier university, expected 2027
 * B.Sc. in General mathematics, Montpellier University, 2025
-* PeiPA (general preparatory ingineering program), Polytech Montpellier, 2024
+* PeiPA (general preparatory engineering program), Polytech Montpellier, 2024
 
 Work experience
 ======
