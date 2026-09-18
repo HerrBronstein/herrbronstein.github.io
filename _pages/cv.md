@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Resume"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* B.Sc. in Applied Mathematics, Montpellier university, expected 2027
+* M.Sc. in Applied Mathematics, Montpellier university, expected 2027
 * B.Sc. in General mathematics, Montpellier University, 2025
 * PeiPA (general preparatory ingineering program), Polytech Montpellier, 2024
 
