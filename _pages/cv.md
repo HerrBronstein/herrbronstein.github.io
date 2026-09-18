@@ -17,15 +17,17 @@ Education
 
 Work experience
 ======
-* Summer 2025: Cook
+*School year 2025-2026 : Mathemathics mentor for 1st and 2nd year B.Sc students
+  * Faculty of sciences - Montpellier
+
+* Summer 2025 : Cook
   * L'accoudoir - Montpellier
 
-
-* Summer 2024: Polyvalent employee
+* Summer 2024 : Polyvalent employee
   * Big Fernand - Montpellier
 
 
-* Summer 2023: Polyvalent employee
+* Summer 2023 : Polyvalent employee
   * Burger King - Lunel
 
 
