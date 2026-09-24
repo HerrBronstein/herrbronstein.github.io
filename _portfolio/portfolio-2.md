@@ -17,6 +17,6 @@ Particular emphasis is placed on the role played by spatial scales involved in t
 We study the relation between the different spatial scales involved in the model and their role in the emergence of this paradox. To this end, we investigate under which conditions the 3D model can provide an admissible approximation of the 2D model. 
 The next step is to study the convergence of 3D solutions towards 2D solutions (and in particular, under which assumptions) and derive convergence rates.
 
-See [report](/file/stokes).
+See [report](/file/stokes.pdf).
 
 Supervised by [Matthieu Hillairet](https://hillairet.perso.math.cnrs.fr/) and Nicolas Roblet.
