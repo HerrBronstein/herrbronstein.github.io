@@ -19,5 +19,6 @@ After theoretical study and computation of these schemes, we put the emphasis on
 The report also contains some proofs for functional analysis results used for the convergence proof of our first hybrid scheme.
 
 
-See report / slides
-Find the full project on my github [here](https://github.com/HerrBronstein/Benjamin-Bona-Mahony-BBM-equation)
+See [report](/files/Rapport_TER_BBM.pdf) / slides
+
+Find the full project on my GitHub [here](https://github.com/HerrBronstein/Benjamin-Bona-Mahony-BBM-equation)
