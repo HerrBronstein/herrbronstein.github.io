@@ -4,8 +4,6 @@ excerpt: "A general study (from mathematical modelling, including theoretical st
 collection: portfolio
 share: false
 ---
-Supervised by [Fabien Marche](https://imag.umontpellier.fr/~marche/).
-
 During this project with [Adrien Martinelli](https://github.com/SequoiaCode), we studied the Benjamin-Bona-Mahony (BBM) equation, describing long wave in dispersive medium (solitons for instance). 
 
 The first part of our work is dedicaced to physical motivation, derivation and justification of the mathematical model (first by deriving Korteweg- de Vries equation, and then by justifying the variation of the KdV equation by the original 1972 article).
@@ -18,7 +16,9 @@ After theoretical study and computation of these schemes, we put the emphasis on
 
 The report also contains some proofs for functional analysis results used for the convergence proof of our first hybrid scheme.
 
+Supervised by [Fabien Marche](https://imag.umontpellier.fr/~marche/).
 
-See [report](/files/Rapport_TER_BBM.pdf) / slides
+
+See [report](/files/BBM_report.pdf) / [slides](/files/Présentation_BBM)
 
 Find the full project on my GitHub [here](https://github.com/HerrBronstein/Benjamin-Bona-Mahony-BBM-equation)
