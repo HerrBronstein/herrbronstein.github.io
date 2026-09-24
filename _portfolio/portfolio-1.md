@@ -19,6 +19,6 @@ The report also contains some proofs for functional analysis results used for th
 Supervised by [Fabien Marche](https://imag.umontpellier.fr/~marche/).
 
 
-See [report](/files/BBM_report.pdf) / [slides](/files/Présentation_BBM)
+See [report](/files/BBM_report.pdf) / [slides](/files/Présentation_BBM.pdf)
 
 Find the full project on my GitHub [here](https://github.com/HerrBronstein/Benjamin-Bona-Mahony-BBM-equation)
