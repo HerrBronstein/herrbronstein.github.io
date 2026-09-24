@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+See my [currriculum vitae](/files/CV_Benjamin_Bronstein.pdf).
+
 Education
 ======
 * M.Sc. in Applied Mathematics, Montpellier university, expected 2027
