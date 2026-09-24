@@ -9,11 +9,11 @@
 const PLOTLY_URL = "https://cdn.jsdelivr.net/npm/plotly.js@3.6.0/dist/plotly.min.js";
 const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 
-// Determine the computed theme, which can be "dark" or "light".
+// Determine the computed theme
 function determineComputedTheme() {
   let themeSetting = localStorage.getItem("theme");
 
-  // Dark mode by default
+  // Dark mode is the default
   if (themeSetting !== "dark" && themeSetting !== "light") {
     themeSetting = "dark";
   }
@@ -21,14 +21,14 @@ function determineComputedTheme() {
   return themeSetting;
 }
 
-// Set the theme on page load or when explicitly called
+// Set the theme
 function setTheme(theme) {
   const use_theme = theme || determineComputedTheme();
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
     $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
-  } else if (use_theme === "light") {
+  } else {
     $("html").removeAttr("data-theme");
     $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
   }
