@@ -16,13 +16,10 @@ const browserPref = window.matchMedia && window.matchMedia('(prefers-color-schem
 function determineComputedTheme() {
   // Determine the expected state of the theme toggle, which can be "dark", "light", or default "system"
   let themeSetting = localStorage.getItem("theme");
-  themeSetting = (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
-
-  // Return the setting if set, or use the browser preference
-  if (themeSetting != "system") {
-    return themeSetting;
-  }
-  return browserPref ? "dark" : "light";
+  themeSetting = (themeSetting != "dark" && themeSetting != "light") ? "dark" : themeSetting;
+   
+// dark mode by default
+  return themeSetting;
 }
 
 // Set the theme on page load or when explicitly called
