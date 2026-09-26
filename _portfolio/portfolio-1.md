@@ -10,7 +10,7 @@ $$\partial_t u + \partial_x u + u \partial_x u - \partial_{txx}^3 u = 0$$
 
 This model can be seen as a variation of the Korteweg - de Vries equation,
 
-$$\partial_t u + \partial_x u + u\partial_x u + \partial_{x}^3 u = 0$$,
+$$\partial_t u + \partial_x u + u\partial_x u + \partial_{x}^3 u = 0$$
 
 By simply substituting $\partial_{x}^3$ by $-\partial_{txx}^3$.
 
