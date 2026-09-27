@@ -6,7 +6,7 @@ share: false
 ---
 
 During this research internship, I studied the mathematical formulation of the Stokes' paradox, a fluid mechanics paradox about creeping flow. 
-This paradox can oraly be said as : "there can be no solutions to the steady-state Stokes problem around a translating infintely long cylinder". Or equivalentely : "there is no non-trivial creeping flow of a fluid around a disk in two-dimensions".
+This paradox can be described as : "there can be no solutions to the steady-state Stokes problem around a translating infintely long cylinder". Or equivalentely : "there is no non-trivial creeping flow of a fluid around a disk in two-dimensions".
 
 
 In the first part, we derive the Green's function of Stokes equations, starting with the Laplace equation and extending the analysis to the Stokes equations. 
