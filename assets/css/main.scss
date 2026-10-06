@@ -41,3 +41,9 @@
 .page__footer {
   display: none;
 }
+
+/* Remove blue color and underline from clickable titles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
