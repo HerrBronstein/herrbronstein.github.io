@@ -44,19 +44,17 @@
 }
 
 /* =========================================================
-   LIENS ET TITRES
+   LIENS DU CONTENU
    ========================================================= */
 
-/* Couleur normale des liens */
-a {
+.page__content a {
   color: #e57373 !important;
   text-decoration: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
 }
 
-/* Couleur au survol */
-a:hover {
+.page__content a:hover {
   color: #b71c1c !important;
   text-decoration: none !important;
   border-bottom: none !important;
@@ -68,7 +66,6 @@ a:hover {
    TITRES DES PROJETS / ARTICLES
    ========================================================= */
 
-/* État normal */
 .archive__item-title,
 .archive__item-title a {
   color: #e57373 !important;
@@ -77,7 +74,6 @@ a:hover {
   box-shadow: none !important;
 }
 
-/* Au survol */
 .archive__item-title:hover,
 .archive__item-title a:hover,
 .archive__item:hover .archive__item-title,
@@ -101,19 +97,6 @@ a:hover {
   border-bottom: none !important;
   box-shadow: none !important;
 }
-
-/* =========================================================
-   LIENS PERSONNELS
-   ========================================================= */
-
-.author__urls a,
-.author__urls a:hover {
-  color: inherit !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
 
 // Orange	#e67e22
 // Rouge	#e74c3c
