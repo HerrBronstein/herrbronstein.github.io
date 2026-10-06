@@ -44,32 +44,31 @@
 
 
 
-// .archive__item-title a {
-//   color: #e67e22;
-//   text-decoration: none;
-// }
+/* ==========================================================================
+   Custom link colors
+   ========================================================================== */
 
-// .archive__item-title a:hover {
-//   color: #b8860b;
-//   text-decoration: none;
-// }
-
-// a:hover {
-//   text-decoration: none;
-// }
-
-.archive__item-title a {
-  color: #e67e22 !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
+/* Tous les liens principaux : titres + liens internet */
+a {
+  color: #e67e22;
+  text-decoration: none;
 }
 
-.archive__item-title a:hover {
-  color: #b8860b !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
+/* Couleur au survol */
+a:hover {
+  color: #b8860b;
+  text-decoration: none;
+}
+
+/* Liens de la zone personnelle : couleur normale du texte */
+.author__urls a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.author__urls a:hover {
+  color: inherit !important;
+  text-decoration: none;
 }
 
 // Orange	#e67e22
