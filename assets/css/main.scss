@@ -41,3 +41,15 @@
 .page__footer {
   display: none;
 }
+
+
+/* Custom link colors */
+.archive__item-title a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+.archive__item-title a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
