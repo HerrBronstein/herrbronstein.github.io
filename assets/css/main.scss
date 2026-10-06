@@ -48,29 +48,32 @@
    Custom link colors
    ========================================================================== */
 
-/* Tous les liens principaux : titres + liens internet */
-a {
-  color: #e57373;
-  text-decoration: none;
+/* Liens des titres et du contenu */
+.archive__item-title a,
+.page__content a {
+  color: #e57373 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
-/* Couleur au survol */
-a:hover {
-  color: #b71c1c;
-  text-decoration: none;
+/* Liens au survol */
+.archive__item-title a:hover,
+.page__content a:hover {
+  color: #b71c1c !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
-/* Liens de la zone personnelle : couleur normale du texte */
-.author__urls a {
-  color: inherit !important;
-  text-decoration: none;
-}
-
+/* Liens personnels : LinkedIn, email, etc. */
+.author__urls a,
 .author__urls a:hover {
   color: inherit !important;
-  text-decoration: none;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
-
 // Orange	#e67e22
 // Rouge	#e74c3c
 // Violet	#9b59b6
