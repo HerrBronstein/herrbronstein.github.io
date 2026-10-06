@@ -44,17 +44,21 @@
 }
 
 /* =========================================================
-   LIENS DU CONTENU
+   LIENS DU SITE
    ========================================================= */
 
-.page__content a {
+/* Liens dans le contenu des pages */
+.page__content a,
+.archive__item a {
   color: #e57373 !important;
   text-decoration: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
 }
 
-.page__content a:hover {
+/* Liens au survol */
+.page__content a:hover,
+.archive__item a:hover {
   color: #b71c1c !important;
   text-decoration: none !important;
   border-bottom: none !important;
@@ -63,7 +67,7 @@
 
 
 /* =========================================================
-   TITRES DES PROJETS / ARTICLES
+   TITRES
    ========================================================= */
 
 .archive__item-title,
@@ -74,8 +78,6 @@
   box-shadow: none !important;
 }
 
-.archive__item-title:hover,
-.archive__item-title a:hover,
 .archive__item:hover .archive__item-title,
 .archive__item:hover .archive__item-title a {
   color: #b71c1c !important;
@@ -87,7 +89,6 @@
 
 /* =========================================================
    LIENS PERSONNELS
-   LinkedIn / Email / etc.
    ========================================================= */
 
 .author__urls a,
@@ -97,6 +98,21 @@
   border-bottom: none !important;
   box-shadow: none !important;
 }
+
+
+/* =========================================================
+   NAVIGATION
+   Les onglets restent avec leur couleur originale
+   ========================================================= */
+
+.greedy-nav a,
+.masthead a {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
 
 // Orange	#e67e22
 // Rouge	#e74c3c
