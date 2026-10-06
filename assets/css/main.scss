@@ -43,29 +43,33 @@
 }
 
 
-// a {
-//   color: #8ab4f8 !important;
-//   text-decoration: none !important;
+
+// .archive__item-title a {
+//   color: #e67e22;
+//   text-decoration: none;
+// }
+
+// .archive__item-title a:hover {
+//   color: #b8860b;
+//   text-decoration: none;
 // }
 
 // a:hover {
-//   color: #b8860b !important;
-//   text-decoration: none !important;
+//   text-decoration: none;
 // }
 
-
 .archive__item-title a {
-  color: #e67e22;
-  text-decoration: none;
+  color: #e67e22 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .archive__item-title a:hover {
-  color: #b8860b;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
+  color: #b8860b !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 // Orange	#e67e22
