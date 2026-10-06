@@ -45,10 +45,30 @@
 
 
 /* =========================================================
-   Liens et titres
+   LIENS
    ========================================================= */
 
-/* Titres des articles/projets */
+/* Liens internet dans le contenu */
+.page__content a {
+  color: #e57373 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Liens internet au survol */
+.page__content a:hover {
+  color: #b71c1c !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   TITRES
+   ========================================================= */
+
+/* Titres des projets/articles */
 .archive__item-title,
 .archive__item-title a {
   text-decoration: none !important;
@@ -56,7 +76,7 @@
   box-shadow: none !important;
 }
 
-/* Supprime le soulignement ajouté par Minimal Mistakes au survol */
+/* Empêche Minimal Mistakes de souligner les titres au survol */
 .archive__item:hover .archive__item-title,
 .archive__item:hover .archive__item-title a {
   text-decoration: none !important;
@@ -64,26 +84,19 @@
   box-shadow: none !important;
 }
 
-/* Liens dans le contenu */
-.page__content a,
-.page__content a:hover {
-  text-decoration: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
-/* Couleur des liens */
-.archive__item-title a,
-.page__content a {
+/* Couleur des titres */
+.archive__item-title a {
   color: #e57373 !important;
 }
 
-.archive__item-title a:hover,
-.page__content a:hover {
+.archive__item-title a:hover {
   color: #b71c1c !important;
 }
 
-/* Liens personnels : LinkedIn, email, etc. */
+/* =========================================================
+   LIENS PERSONNELS
+   ========================================================= */
+
 .author__urls a,
 .author__urls a:hover {
   color: inherit !important;
@@ -91,6 +104,8 @@
   border-bottom: none !important;
   box-shadow: none !important;
 }
+
+
 // Orange	#e67e22
 // Rouge	#e74c3c
 // Violet	#9b59b6
