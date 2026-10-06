@@ -42,8 +42,8 @@
   display: none;
 }
 
-/* Remove blue color and underline from clickable titles */
-a {
-  text-decoration: none;
+.archive__item-title a,
+.archive__item-title a:hover {
   color: inherit;
+  text-decoration: none;
 }
