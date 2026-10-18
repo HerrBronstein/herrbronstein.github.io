@@ -29,7 +29,16 @@ In order to do so, we have an important choice of polynomial basis (with differe
 
 ## Finite volumes method
 
-## Finite element method **
+Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Finite_Volumes) my 1D implementation of the basic finite element method on some classical examples of hyperbolic conservation laws (Burgers, BBM...),
+$$ \partial_t u + \partial_x f(u) = 0  $$
+or advection equations,
+$$ \partial_t u + \beta(t,x) \partial_x f(u) = 0 $$
+with Dirichlet or periodic boundary conditions.
+
+## Finite elements method 
+
+Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Lagrange_FEM_Poisson) a 1D implementation of the Lagrange finite elements method on the classical Poisson problem,
+$$ - \Delta u = f $$
 
 ## Discontinuous Galerkin method 
 ### Symmetric interior penalty discontinuous Galerkin method 
