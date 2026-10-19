@@ -99,6 +99,3 @@ With $M$ the mass matrix of the associated polynomial basis.
 
 ## Hybrid high-order (HHO) method 
 Not coded yet but this is a future goal !
-
-We consider the HHO space, 
-$$\underline{U}_h := \Big\{ \big( (v_K)_{K \in T_h}, (v_F)_{F \in F_h} \big) \ | \ \forall K \in T_h, \ v_K \in \mathbb{P}^d(K), \quad \forall F \in F_h, v_F \in \mathbb{P}^d(F)  \Big\} $$
