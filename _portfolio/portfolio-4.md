@@ -68,7 +68,7 @@ The discontinuous Galerkin method can be seen as a generalization of the finite 
 See [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Discontinuous_Galerkin_Poisson) the code associated with the SIP-dG method.
 The discrete bilinear form reads,
 
-$$a_h(u_h,v_h)=\sum_{K \in T_h}\Big( \int_{K} \nabla u_h \cdot \nabla v_h - \sum_{F \in F_K}\int_{F} \llbracket u_h \rrbracket \cdot \{\! \nabla v_h \!\} +  \llbracket  v_h \rrbracket \cdot \{\! \nabla u_h \!\} + \sum_{F \in F_K} \int_{F} \frac{\eta}{h_F} \llbracket u_h \rrbracket \llbracket v_h \rrbracket \Big)$$
+$$a_h(u_h,v_h)=\sum_{K \in T_h}\Big( \int_{K} \nabla u_h \cdot \nabla v_h - \sum_{F \in F_K}\int_{F} \llbracket u_h \rrbracket \cdot \avg{\nabla v_h} +  \llbracket  v_h \rrbracket \cdot \avg{\nabla u_h} + \sum_{F \in F_K} \int_{F} \frac{\eta}{h_F} \llbracket u_h \rrbracket \llbracket v_h \rrbracket \Big)$$
 
 ### Hyperbolic discontinuous Galerkin method 
 
