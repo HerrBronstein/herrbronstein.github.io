@@ -45,8 +45,31 @@ Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/L
 
 $$- \Delta u = f$$
 
+The main idea of the finite elements method is to transform the weak continuous problem (generally defined on Sobolev spaces) to a discrete weak formulation using polynomial test functions, defined on each cell of the mesh $T_h$. The numerical solution $u_h$ is then sought in the form,
+
+$$u_h(t,x) = \sum_{K\in T_h}\sum_{i=0}^{d}u_i^K(t)\phi_i^K(x)$$
+
+Where $(\phi_i^k)_{0 \leq i \leq d}$ is a polynomial basis (often a Lagrange basis) which interpolate functions of the continuous space $V$ to the discrete space $V_h \subset C^0(\Omega)\cap\mathbb{P}^d(T_h)$ on each cells $K \in T_h$.
+The continuous problem is thus transformed into a linear problem in a finite dimension space. The semi-discrete formulation reads : 
+Find $u_h \in V_h$ such that for every $v_h \in V_h$ 
+
+$$a_h(u_h,v_h) := \sum_{K \in T_h}\int_{K}\nabla u_h \cdot \nabla v_h = \int_{\Omega}fv_h $$
+
+Letting $$A_h := \Big(\sum_{K \in T_h}a_h(\phi_i^K,\phi_j^K)\Big)_{0\leq i,j \leq d}$$, the linear problem problem reads, 
+
+$$A_hU_h=B_h$$
+
 ## Discontinuous Galerkin method 
-### Symmetric interior penalty discontinuous Galerkin method 
+
+The discontinuous Galerkin method can be seen as a generalization of the finite element method to discontinuous spaces of functions. The idea is the same as the classical finite elements methods, but instead of a discrete space of continuous polynomials, the formulation use polynomials that are not necessarily continuous accross cell interfaces. The coupling of cells is then made through jumps or means values on interfaces, making this formulation close to the finite volumes one.
+
+### Symmetric interior penalty discontinuous Galerkin (SIP-dG) method 
+
+See [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Discontinuous_Galerkin_Poisson) the code associated with the SIP-dG method.
+The discrete bilinear form reads,
+
+$$a_h(u_h,v_h)=\sum_{K \in T_h}\Big( \int_{K} \nabla u_h \cdot \nabla v_h - \sum_{F \in F_K}\int_{F} \llbracket u_h \rrbracket \cdot \{\! \nabla v_h \!\} +  \llbracket  v_h \rrbracket \cdot \{\! \nabla u_h \!\} + \sum_{F \in F_K} \int_{F} \frac{\eta}{h_F} \llbracket u_h \rrbracket \llbracket v_h \rrbracket \Big)$$
+
 ### Hyperbolic discontinuous Galerkin method 
 
 ## Hybrid high-order (HHO) method 
