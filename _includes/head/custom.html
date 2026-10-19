@@ -22,9 +22,16 @@
 <!-- Support for MathJax -->
 <script>
   MathJax = {
+    loader: {
+      load: ['[tex]/stmaryrd']
+    },
     tex: {
+      packages: {'[+]': ['stmaryrd']},
       inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      macros: {
+        avg: ['\\{\\!\\{#1\\}\\!\\}', 1]
+      }
     }
   };
 </script>
