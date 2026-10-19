@@ -50,7 +50,7 @@ The main idea of the finite elements method is to transform the weak continuous 
 $$u_h(t,x) = \sum_{K\in T_h}\sum_{i=0}^{d}u_i^K(t)\phi_i^K(x)$$
 
 Where $(\phi_i^k)_{0 \leq i \leq d}$ is a polynomial basis (often a Lagrange basis) which interpolate functions of the continuous space $V$ to the discrete space $V_h \subset C^0(\Omega)\cap\mathbb{P}^d(T_h)$ on each cells $K \in T_h$.
-The continuous problem is thus transformed into a linear problem in a finite dimension space. The semi-discrete formulation reads : 
+The continuous problem is thus transformed into a linear problem in a finite dimension space. The discrete formulation reads : 
 Find $u_h \in V_h$ such that for every $v_h \in V_h$ 
 
 $$a_h(u_h,v_h) := \sum_{K \in T_h}\int_{K}\nabla u_h \cdot \nabla v_h = \int_{\Omega}fv_h $$
@@ -62,6 +62,7 @@ $$A_hU_h=B_h$$
 ## Discontinuous Galerkin method 
 
 The discontinuous Galerkin method can be seen as a generalization of the finite element method to discontinuous spaces of functions. The idea is the same as the classical finite elements methods, but instead of a discrete space of continuous polynomials, the formulation use polynomials that are not necessarily continuous accross cell interfaces. The coupling of cells is then made through jumps or means values on interfaces, making this formulation close to the finite volumes one.
+
 The discontinuous Galerkin method is often associated with modal approach, with modal polynomial basis as evocated earlier.
 
 ### Symmetric interior penalty discontinuous Galerkin (SIP-dG) method 
@@ -72,6 +73,7 @@ The discrete bilinear form reads,
 $$a_h(u_h,v_h)=\sum_{K \in T_h}\bigg( \int_{K} \nabla u_h \cdot \nabla v_h - \sum_{F \in F_K}\int_{F} \Big( \llbracket u_h \rrbracket \cdot \avg{\nabla v_h} +  \llbracket  v_h \rrbracket \cdot \avg{\nabla u_h} \Big) + \sum_{F \in F_K} \int_{F} \frac{\eta}{h_F} \llbracket u_h \rrbracket \llbracket v_h \rrbracket \bigg)$$
 
 With $\llbracket \cdot \rrbracket$ jump and $\avg{\cdot}$ mean on the interface considered. 
+
 $\eta > 0$ is a parameter that ensure the coercivity of the discrete bilinear form $a_h$, choosen arbitrary.
 
 ### Hyperbolic discontinuous Galerkin method 
@@ -85,7 +87,7 @@ With $f$ a physical flux function. Let $d\in \mathbb{N}$ be a polynomial degree.
 $$\int_{K} \partial_t u v_h - \int_{K} f(u) \partial_x v_h + \int_{\partial K} f(u) v_h = 0$$
 
 In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
-The discrete formulation reads,
+The semi-discrete formulation reads,
 
 $$\int_{K} \partial_t u v_h - \int_{K} \widehat{F}(u) \partial_x v_h + \int_{\partial K} \widehat{F}(u) v_h  = 0$$
 
@@ -93,7 +95,10 @@ By taking $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear 
 
 $$M\Big( \frac{\text{d}}{\text{d}t}U_h^K\Big) + \widehat{F}^{\partial K} - \widehat{F}^K = 0$$
 
-With $M$ the mass matrix of the polynomial basis.
+With $M$ the mass matrix of the associated polynomial basis.
 
 ## Hybrid high-order (HHO) method 
 Not coded yet but this is a future goal !
+
+We consider the HHO space, 
+$$\underline{U}_h := \Big\{ \big( (v_K)_{K \in T_h}, (v_F)_{F \in F_h} \big) \ | \ \forall K \in T_h, \ v_K \in \mathbb{P}^d(K), \quad \forall F \in F_h, v_F \in \mathbb{P}^d(F)  \Big\} $$
