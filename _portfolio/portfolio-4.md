@@ -62,15 +62,38 @@ $$A_hU_h=B_h$$
 ## Discontinuous Galerkin method 
 
 The discontinuous Galerkin method can be seen as a generalization of the finite element method to discontinuous spaces of functions. The idea is the same as the classical finite elements methods, but instead of a discrete space of continuous polynomials, the formulation use polynomials that are not necessarily continuous accross cell interfaces. The coupling of cells is then made through jumps or means values on interfaces, making this formulation close to the finite volumes one.
+The discontinuous Galerkin method is often associated with modal approach, with modal polynomial basis as evocated earlier.
 
 ### Symmetric interior penalty discontinuous Galerkin (SIP-dG) method 
 
 See [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Discontinuous_Galerkin_Poisson) the code associated with the SIP-dG method.
 The discrete bilinear form reads,
 
-$$a_h(u_h,v_h)=\sum_{K \in T_h}\Big( \int_{K} \nabla u_h \cdot \nabla v_h - \sum_{F \in F_K}\int_{F} \llbracket u_h \rrbracket \cdot \avg{\nabla v_h} +  \llbracket  v_h \rrbracket \cdot \avg{\nabla u_h} + \sum_{F \in F_K} \int_{F} \frac{\eta}{h_F} \llbracket u_h \rrbracket \llbracket v_h \rrbracket \Big)$$
+$$a_h(u_h,v_h)=\sum_{K \in T_h}\bigg( \int_{K} \nabla u_h \cdot \nabla v_h - \sum_{F \in F_K}\int_{F} \Big( \llbracket u_h \rrbracket \cdot \avg{\nabla v_h} +  \llbracket  v_h \rrbracket \cdot \avg{\nabla u_h} \Big) + \sum_{F \in F_K} \int_{F} \frac{\eta}{h_F} \llbracket u_h \rrbracket \llbracket v_h \rrbracket \bigg)$$
+
+With $\llbracket \cdot \rrbracket$ jump and $\avg{\cdot}$ mean on the interface considered. 
+$\eta > 0$ is a parameter that ensure the coercivity of the discrete bilinear form $a_h$, choosen arbitrary.
 
 ### Hyperbolic discontinuous Galerkin method 
+
+Let's consider a general scalar conservation law,
+
+$$\partial_t u + \partial_x f(u) = 0$$
+
+With $f$ a physical flux function. Let $d\in \mathbb{N}$ be a polynomial degree. By choosing $v_h \in \mathbb{P}^d_K(T_h)$, we can establish a weak formulation of the problem on a cell $K \in T_h$,
+
+$$\int_{K} \partial_t u v_h - \int_{K} f(u) \partial_x v_h + \int_{\partial K} f(u) v_h = 0$$
+
+In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
+The discrete formulation reads,
+
+$$\int_{K} \partial_t u v_h - \int_{K} \widehat{F}(u) \partial_x v_h + \int_{\partial K} \widehat{F}(u) v_h  = 0$$
+
+By taking $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear system verified by the discrete weak formulation on the cell $K$,
+
+$$M\Big( \frac{\text{d}}{\text{d}t}U_h^K\Big) + \widehat{F}^{\partial K} - \widehat{F}^K = 0$$
+
+With $M$ the mass matrix of the polynomial basis.
 
 ## Hybrid high-order (HHO) method 
 Not coded yet but this is a future goal !
