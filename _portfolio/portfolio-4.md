@@ -93,13 +93,13 @@ $$\int_{K} \partial_t u v_h - \int_{K} f(u) \partial_x v_h + \int_{\partial K} f
 In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces, since $v_h$ and $u_h$ are in $\mathbb{P}^d_K(T_h)$. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
 The semi-discrete formulation reads,
 
-$$\int_{K} \partial_t u v_h - \int_{K} \widehat{F}(u) \partial_x v_h + \int_{\partial K} \widehat{F}(u) v_h  = 0$$
+$$\int_{K} \partial_t u_h v_h - \int_{K} \widehat{F}(u_h) \partial_x v_h + \int_{\partial K} \widehat{F}(u_h) v_h  = 0$$
 
 By taking $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear system verified by the discrete weak solution $u_h$ on the cell $K$,
 
 $$M\Big( \frac{\text{d}}{\text{d}t}U_h^K\Big) + \widehat{F}^{\partial K} - \widehat{F}^K = 0$$
 
-With $M$ the mass matrix of the associated polynomial basis.
+Where $U_h^k = (u_i)_{0\leq i\leq d}$ are the modal coefficients of the numerical solution $u_h$ in the cell $K$, and $M$ is the mass matrix of the associated polynomial basis.
 
 ## Hybrid high-order (HHO) method 
 Not coded yet but this is a future goal !
