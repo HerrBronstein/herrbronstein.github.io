@@ -95,7 +95,7 @@ The semi-discrete formulation reads,
 
 $$\int_{K} \partial_t u v_h - \int_{K} \widehat{F}(u) \partial_x v_h + \int_{\partial K} \widehat{F}(u) v_h  = 0$$
 
-By taking $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear system verified by the discrete weak formulation on the cell $K$,
+By taking $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear system verified by the discrete weak solution $u_h$ on the cell $K$,
 
 $$M\Big( \frac{\text{d}}{\text{d}t}U_h^K\Big) + \widehat{F}^{\partial K} - \widehat{F}^K = 0$$
 
