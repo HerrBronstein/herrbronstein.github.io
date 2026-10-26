@@ -24,7 +24,7 @@ $$y' = f(t,y)$$
 
 With $f$ a function representing the derivative of $u$. The classical example is $f(t,y) = y$, so the ODE can be rewritten as $y' = y$.
 
-There exist several methods to solve this kind of equations (explicit Euler, Crank-Nicolson, Runge-Kutta etc.). The general idea behind these methods lies in the classical following formula :
+There exist several methods to solve this kind of equations (explicit Euler, Crank-Nicolson, Runge-Kutta etc.). The general idea behind these methods lies in the fundamental theorem of calculus :
 
 $$u(t + \Delta t) = u(t) + \int_{t}^{t + \Delta t} f\big(s,u(s)\big) \ \text{d}s$$
 
