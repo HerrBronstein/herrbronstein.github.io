@@ -32,6 +32,7 @@ In order to do so, we have an important choice of polynomial basis (with differe
 Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Finite_Volumes) my 1D implementation of the basic finite volumes method : 
 
 $$u_i^{n+1} = u_i^n + \frac{\Delta t}{\Delta x} \Big( \mathcal{F}_{i+\frac{1}{2}} - \mathcal{F}_{i-\frac{1}{2}} \Big)$$
+
 With $\mathcal{F}_{i+\frac{1}{2}}$ numerical flux (global Lax-Friedrichs, Rusanov, Murman-Roe...) at the interface $x_{i+1}$, on some classical examples of hyperbolic conservation laws (Burgers, BBM...),
 
 $$\partial_t u(t,x) + \partial_x f(u)(t,x) = 0 $$
