@@ -15,6 +15,21 @@ As a personnal project I decided to create a framework that could be useful for 
 ## General tools
 ### Interpolation
 ### Time solving schemes
+
+Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Time_schemes) my implementation of time integrators.
+
+The classical form of an ordinary differential equation (ODE) can be written as,
+
+$$y' = f(t,y)$$
+
+With $f$ a function representing the derivative of $u$. The classical example is $f(t,y) = y$, so the ODE can be rewritten as $y' = y$.
+
+There exist several methods to solve this kind of equations (explicit Euler, Crank-Nicolson, Runge-Kutta etc.). The general idea behind these methods lies in the classical following formula :
+
+$$u(t + \Delta t) = u(t) + \int_{t}^{t + \Delta t} f\big(s,u(s)\big) \ \text{d}s$$
+
+In order to construct time dependant PDEs schemes, we need these time solving schemes to manage the time evolution. To this end, we can consider $f$ a vectorial function representing $\frac{\text{d}}{\text{d}t} U$, with $U$ the space discretization of a solution of a unsteady PDE. So we can use classical ODE schemes to complete the numerical resolution of a PDE. 
+
 ### Meshes
 
 ## Polynomial basis
