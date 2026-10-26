@@ -86,11 +86,11 @@ Let's consider a general scalar conservation law,
 
 $$\partial_t u + \partial_x f(u) = 0$$
 
-With $f$ a physical flux function. Let $d\in \mathbb{N}$ be a polynomial degree. By choosing $v_h \in \mathbb{P}^d_K(T_h)$, we can establish a weak formulation of the problem on a cell $K \in T_h$,
+With $f$ a physical flux function. Let $d\in \mathbb{N}$ be a polynomial degree. By choosing $v_h \in C^1(\Omega)$, we can establish a weak formulation of the problem on a cell $K \in T_h$,
 
 $$\int_{K} \partial_t u v_h - \int_{K} f(u) \partial_x v_h + \int_{\partial K} f(u) v_h = 0$$
 
-In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
+In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces, since $v_h$ and $u_h$ are in $\mathbb{P}^d_K(T_h)$. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
 The semi-discrete formulation reads,
 
 $$\int_{K} \partial_t u v_h - \int_{K} \widehat{F}(u) \partial_x v_h + \int_{\partial K} \widehat{F}(u) v_h  = 0$$
