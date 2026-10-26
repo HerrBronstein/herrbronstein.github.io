@@ -39,7 +39,7 @@ $$\partial_t u(t,x) + \partial_x f(u)(t,x) = 0 $$
 
 or advection equations,
 
-$$\partial_t u(t,x) + \beta(t,x) \partial_x u(t,x) = 0$$
+$$\partial_t u(t,x) + \partial_x \big( \beta(t,x) u(t,x) \big) = 0$$
 
 with Dirichlet or periodic boundary conditions.
 
