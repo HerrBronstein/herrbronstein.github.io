@@ -22,7 +22,7 @@ An ordinary differential equation (ODE) can be written in the form,
 
 $$y' = f(t,y)$$
 
-With $f$ a function representing the derivative of $u$, with a prescribed initiall condition $y(0)=y_0$. The classical example is $f(t,y) = y$ with $y(0)=1$, so the ODE can be rewritten as $y' = y$, $y(0)=1$.
+With $f$ a function representing the derivative of $u$, with a prescribed initiall condition $y(0)=y_0$. The classical example is $f(t,y) = y$, so the ODE can be rewritten as $y' = y$.
 
 There exist several methods to solve this kind of equations : explicit Euler, Crank-Nicolson, Runge-Kutta etc. The general idea behind these methods lies in the fundamental theorem of calculus :
 
@@ -30,7 +30,7 @@ $$u(t + \Delta t) = u(t) + \int_{t}^{t + \Delta t} f\big(s,u(s)\big) \ \text{d}s
 
 The efforts goes on the numerical approximation of the integral, since a primitive of $f$ is generally complex (even impossible in the general case) to obtain.
 
-In order to construct time dependant PDEs schemes, we need these time solving schemes to manage the time evolution. To this end, we can consider $f$ a vectorial function representing $\frac{\text{d}}{\text{d}t} U$, with $U$ a vector assowiated with the space discretization of a solution of an unsteady PDE.
+In order to construct time dependant PDEs schemes, we need these time solving schemes to manage the time evolution. To this end, we can consider $f$ a vectorial function representing $\frac{\text{d}}{\text{d}t} U$, with $U$ a vector associated with the space discretization of a solution of an unsteady PDE.
 
 ### Meshes
 
