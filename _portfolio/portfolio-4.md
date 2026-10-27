@@ -14,23 +14,27 @@ As a personnal project I decided to create a framework that could be useful for 
 
 ## General tools
 ### Interpolation
-### Time solving schemes
+### Time integrator
 
 Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Time_schemes) my implementation of time integrators.
 
-The classical form of an ordinary differential equation (ODE) can be written as,
+An ordinary differential equation (ODE) can be written in the form,
 
 $$y' = f(t,y)$$
 
-With $f$ a function representing the derivative of $u$. The classical example is $f(t,y) = y$, so the ODE can be rewritten as $y' = y$.
+With $f$ a function representing the derivative of $u$, with a prescribed initiall condition $y(0)=y_0$. The classical example is $f(t,y) = y$ with $y(0)=1$, so the ODE can be rewritten as $y' = y$, $y(0)=1$.
 
-There exist several methods to solve this kind of equations (explicit Euler, Crank-Nicolson, Runge-Kutta etc.). The general idea behind these methods lies in the fundamental theorem of calculus :
+There exist several methods to solve this kind of equations : explicit Euler, Crank-Nicolson, Runge-Kutta etc. The general idea behind these methods lies in the fundamental theorem of calculus :
 
 $$u(t + \Delta t) = u(t) + \int_{t}^{t + \Delta t} f\big(s,u(s)\big) \ \text{d}s$$
 
-In order to construct time dependant PDEs schemes, we need these time solving schemes to manage the time evolution. To this end, we can consider $f$ a vectorial function representing $\frac{\text{d}}{\text{d}t} U$, with $U$ the space discretization of a solution of a unsteady PDE. So we can use classical ODE schemes to complete the numerical resolution of a PDE. 
+The efforts goes on the numerical approximation of the integral, since a primitive of $f$ is generally complex (even impossible in the general case) to obtain.
+
+In order to construct time dependant PDEs schemes, we need these time solving schemes to manage the time evolution. To this end, we can consider $f$ a vectorial function representing $\frac{\text{d}}{\text{d}t} U$, with $U$ a vector assowiated with the space discretization of a solution of an unsteady PDE.
 
 ### Meshes
+
+Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Galerkin%20methods%20framework) my implementation of meshes.
 
 ## Polynomial basis
 
@@ -60,9 +64,11 @@ with Dirichlet or periodic boundary conditions.
 
 ## Finite elements method 
 
-Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Lagrange_FEM_Poisson) a 1D implementation of the Lagrange finite elements method on the classical Poisson problem,
+Find [here](https://github.com/HerrBronstein/Numerical-Methods-Tools/tree/main/Lagrange_FEM_Poisson) a 1D implementation of the Lagrange finite elements method on the classical Poisson problem on a domain $\Omega$,
 
 $$- \Delta u = f$$
+
+With homogeneous Dirichlet boundary data for example.
 
 The main idea of the finite elements method is to transform the weak continuous problem (generally defined on Sobolev spaces) to a discrete weak formulation using polynomial test functions, defined on each cell of the mesh $T_h$. The numerical solution $u_h$ is then sought in the form,
 
@@ -74,9 +80,11 @@ Find $u_h \in V_h$ such that for every $v_h \in V_h$
 
 $$a_h(u_h,v_h) := \sum_{K \in T_h}\int_{K}\nabla u_h \cdot \nabla v_h = \int_{\Omega}fv_h $$
 
-Letting $$A_h := \Big(\sum_{K \in T_h}a_h(\phi_i^K,\phi_j^K)\Big)_{0\leq i,j \leq d}$$, the linear problem problem reads, 
+Setting $$A_h := \Big(\sum_{K \in T_h}\int_{\Omega} \nabla \phi_i^K \cdot \nabla \phi_j^K \Big)_{0\leq i,j \leq d}$$, the linear problem problem reads, 
 
 $$A_hU_h=B_h$$
+
+The rest of the method consist in the resolution of the linear system defined by $A_h$ and $B_h$.
 
 ## Discontinuous Galerkin method 
 
@@ -101,20 +109,29 @@ Let's consider a general scalar conservation law,
 
 $$\partial_t u + \partial_x f(u) = 0$$
 
-With $f$ a physical flux function. Let $d\in \mathbb{N}$ be a polynomial degree. By choosing $v_h \in C^1(\Omega)$, we can establish a weak formulation of the problem on a cell $K \in T_h$,
+With $f$ a physical flux function. Let $d\in \mathbb{N}$ be a polynomial degree. By choosing $v \in C^1(\Omega)$, we can establish a weak formulation of the problem on a cell $K \in T_h$,
 
-$$\int_{K} \partial_t u v_h - \int_{K} f(u) \partial_x v_h + \int_{\partial K} f(u) v_h = 0$$
+$$\int_{K} \partial_t u v - \int_{K} f(u) \partial_x v + \int_{\partial K} f(u) v = 0$$
 
-In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces, since $v_h$ and $u_h$ are in $\mathbb{P}^d_K(T_h)$. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
-The semi-discrete formulation reads,
+In the classical finite elements method, we would have changed $u$ for $u_h$ in the formulation, but in the discontinuous setting there is no reason that the flux $f$ stays continuous accross interfaces, since test functions $v_h$ and numercial solution $u_h$ are in $\mathbb{P}^d_K(T_h)$. The discrete weak formulation introduce a numerical flux $\widehat{F}$ (as well as in the finite volumes method), that we can choose later according to the physical flux considered, among a wide choice : global Lax-Friedrichs, Rusanov, Murman-Roe, Godunov...
+The semi-discrete formulation on cell $K$ reads : Find $u_h \in \mathbb{P}^d_K(T_h)$ such that for every $v_h \in \mathbb{P}^d_K(T_h)$,
 
 $$\int_{K} \partial_t u_h v_h - \int_{K} \widehat{F}(u_h) \partial_x v_h + \int_{\partial K} \widehat{F}(u_h) v_h  = 0$$
 
-By taking $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear system verified by the discrete weak solution $u_h$ on the cell $K$,
+By choosing $v_h = \phi_j^K \in \mathbb{P}(K)^d$, we can finally write the linear differential system verified by the discrete weak solution $u_h$ on the cell $K$,
 
 $$M\Big( \frac{\text{d}}{\text{d}t}U_h^K\Big) + \widehat{F}^{\partial K} - \widehat{F}^K = 0$$
 
 Where $U_h^k = (u_i)_{0\leq i\leq d}$ are the modal coefficients of the numerical solution $u_h$ in the cell $K$, and $M$ is the mass matrix of the associated polynomial basis.
 
 ## Hybrid high-order (HHO) method 
-Not coded yet but this is a future goal !
+
+We define the HHO space as,
+
+$$ \underline{U}_h^k = \Big( \big( (u_T)_{T \in T_h},(u_F)_{F \in \mathcal{F}_h} \big) \ | \ u_T \in \mathbb{P}^k(T), \ u_F \in \mathbb{P}^k(F), \ \forall T \in T_h, \ \forall F \in \mathcal{F}_h \Big) $$
+
+The discrete formulation for the Poisson problem with homogeneous Dirichlet boundary condition reads : Find $\underline{u_h}\in\underline{U}_h^k$ such that for every $v_h \in \underline{U}_h^k$,
+
+$$a_h(\underline{u}_h,\underline{v}_h) := \sum_{T \in T_h} \int_{T} \nabla p_T^{k+1}\underline{u}_T \cdot \nabla p_T^{k+1}\underline{v}_T + \sum_{T \in T_h}s_T(\underline{u}_T,\underline{v}_T) = \sum_{T \in T_h}\int_{T} fv_T$$
+
+With $p_T^{k+1}:\underline{U}_h^k \longrightarrow \mathbb{P}^k(T)$ the potential reconstruction, whose definition is based on the Green formula and $s_T$ a stabilization term introduced to ensure the coercivity of the global bilinear form $a_h$.
