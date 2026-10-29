@@ -130,7 +130,7 @@ We define the HHO space as,
 
 $$ \underline{U}_h^k = \Big( \big( (u_T)_{T \in T_h},(u_F)_{F \in \mathcal{F}_h} \big) \ | \ u_T \in \mathbb{P}^k(T), \ u_F \in \mathbb{P}^k(F), \ \forall T \in T_h, \ \forall F \in \mathcal{F}_h \Big) $$
 
-The discrete formulation for the Poisson problem with homogeneous Dirichlet boundary condition reads : Find $\underline{u}_h \in \underline{U}_{h,0}^k$ such that for every $\underline{v}_h \in \underline{U}_{h,0}^k$ :
+The discrete formulation for the Poisson problem with homogeneous Dirichlet boundary condition reads : Find $\underline{u}_h \in \underline{U}^k_{h,0}$ such that for every $\underline{v}_h \in \underline{U}_{h,0}^k$ :
 
 $$a_h(\underline{u}_h,\underline{v}_h) := \sum_{T \in T_h} \int_{T} \nabla p_T^{k+1}\underline{u}_T \cdot \nabla p_T^{k+1}\underline{v}_T + \sum_{T \in T_h}s_T(\underline{u}_T,\underline{v}_T) = \sum_{T \in T_h}\int_{T} fv_T$$
 
