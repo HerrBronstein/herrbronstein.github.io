@@ -209,7 +209,7 @@ incremental: false
 
 # Markdown Processing
 kramdown:
-  input: GFM
+  input: Kramdown
   math_engine: mathjax
   hard_wrap: false
   auto_ids: true
